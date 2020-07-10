@@ -15,14 +15,16 @@
  */
 package com.hivemq.extensions.kafka.api.model;
 
+import com.hivemq.extension.sdk.api.annotations.NotNull;
+
 /**
  * @author Christoph Schäbel
  */
 public
 interface KafkaCluster {
 
-    String getId();
+    @NotNull String getId();
 
-    String getBootstrapServers();
+    @NotNull String getBootstrapServers();
 
 }

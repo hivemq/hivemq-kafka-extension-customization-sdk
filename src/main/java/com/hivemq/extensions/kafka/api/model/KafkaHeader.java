@@ -15,19 +15,24 @@
  */
 package com.hivemq.extensions.kafka.api.model;
 
+import com.hivemq.extension.sdk.api.annotations.NotNull;
+
 import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
 
 /**
  * @author Christoph Schäbel
  */
 public interface KafkaHeader {
 
-    String getKey();
+    @NotNull String getKey();
 
-    ByteBuffer getValue();
+    @NotNull ByteBuffer getValue();
 
-    String getValueAsString();
+    @NotNull String getValueAsString();
 
-    byte[] getValueAsByteArray();
+    @NotNull String getValueAsString(@NotNull Charset charset);
+
+    @NotNull byte[] getValueAsByteArray();
 
 }

@@ -26,7 +26,7 @@ import java.util.Optional;
  */
 public interface KafkaHeaders {
 
-    List<KafkaHeader> asList();
+    @NotNull List<KafkaHeader> asList();
 
     /**
      * @param name The name of the user property to get.

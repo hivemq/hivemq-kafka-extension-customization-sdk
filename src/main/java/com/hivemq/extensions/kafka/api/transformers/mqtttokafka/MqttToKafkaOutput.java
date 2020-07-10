@@ -28,5 +28,5 @@ public interface MqttToKafkaOutput {
 
     @NotNull KafkaRecordBuilder newKafkaRecordBuilder();
 
-    void setKafkaRecords(@NotNull List<KafkaRecord> kafkaRecord);
+    void setKafkaRecords(@NotNull List<@NotNull KafkaRecord> kafkaRecord);
 }

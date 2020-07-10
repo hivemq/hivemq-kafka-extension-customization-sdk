@@ -19,6 +19,7 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extensions.kafka.api.model.KafkaRecord;
 
 import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
 
 /**
  * @author Christoph Schäbel
@@ -33,15 +34,23 @@ public interface KafkaRecordBuilder {
 
     @NotNull KafkaRecordBuilder header(@NotNull String key, @NotNull String value);
 
+    @NotNull KafkaRecordBuilder header(@NotNull String key, @NotNull String value, @NotNull Charset charset);
+
     @NotNull KafkaRecordBuilder key(@NotNull ByteBuffer key);
 
     @NotNull KafkaRecordBuilder key(@NotNull byte[] key);
 
     @NotNull KafkaRecordBuilder key(@NotNull String key);
 
+    @NotNull KafkaRecordBuilder key(@NotNull String key, @NotNull Charset charset);
+
     @NotNull KafkaRecordBuilder value(@NotNull ByteBuffer value);
 
     @NotNull KafkaRecordBuilder value(@NotNull byte[] value);
+
+    @NotNull KafkaRecordBuilder value(@NotNull String value);
+
+    @NotNull KafkaRecordBuilder value(@NotNull String value, @NotNull Charset charset);
 
     @NotNull KafkaRecordBuilder timestamp(long timestamp);
 

@@ -21,7 +21,8 @@ import com.hivemq.extensions.kafka.api.transformers.Transformer;
 /**
  * @author Christoph Schäbel
  */
-public interface MqttToKafkaTransformer extends Transformer {
+public interface MqttToKafkaTransformer extends Transformer<MqttToKafkaInitInput> {
 
     void transformMqttToKafka(@NotNull MqttToKafkaInput input, @NotNull MqttToKafkaOutput output);
+
 }
