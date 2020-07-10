@@ -20,7 +20,7 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
 /**
  * @author Christoph Schäbel
  */
-public interface Transformer {
-    default void init(@NotNull TransformerInitInput input) {
+public interface Transformer<I extends TransformerInitInput> {
+    default void init(@NotNull I input) {
     }
 }

@@ -18,11 +18,14 @@ package com.hivemq.extensions.kafka.api.transformers.mqtttokafka;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extension.sdk.api.packets.publish.PublishPacket;
 import com.hivemq.extensions.kafka.api.model.KafkaCluster;
+import com.hivemq.extensions.kafka.api.services.KafkaTopicService;
 
 /**
  * @author Christoph Schäbel
  */
 public interface MqttToKafkaInput {
+
+    @NotNull KafkaTopicService getKafkaTopicService();
 
     @NotNull PublishPacket getPublishPacket();
 

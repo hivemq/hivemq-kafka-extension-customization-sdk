@@ -33,11 +33,11 @@ public interface KafkaRecord {
 
     @NotNull Optional<byte[]> getKeyAsByteArray();
 
-    @NotNull ByteBuffer getValue();
+    @NotNull Optional<ByteBuffer> getValue();
 
-    @NotNull byte[] getValueAsByteArray();
+    @NotNull Optional<byte[]> getValueAsByteArray();
 
-    @NotNull Long getTimestamp();
+    @NotNull Optional<Long> getTimestamp();
 
     @NotNull Optional<Integer> getPartition();
 
