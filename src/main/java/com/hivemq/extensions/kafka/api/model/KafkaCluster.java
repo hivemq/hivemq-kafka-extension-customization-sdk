@@ -13,18 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extensions.kafka.api.model;
 
+import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
+import com.hivemq.extension.sdk.api.annotations.Immutable;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 
 /**
+ * This interface provides information about a {@code <kafka-cluster>} as it is configured in the {@code
+ * kafka-extension.xml}.
+ *
  * @author Christoph Schäbel
+ * @author Georg Held
+ * @since 4.4.0
  */
-public
-interface KafkaCluster {
+@Immutable
+@DoNotImplement
+public interface KafkaCluster {
 
+    /**
+     * @return the configured {@code <id>} of the luster.
+     * @since 4.4.0
+     */
     @NotNull String getId();
 
+    /**
+     * @return the configured {@code <bootstrap-servers>} of the cluster.
+     */
     @NotNull String getBootstrapServers();
-
 }
