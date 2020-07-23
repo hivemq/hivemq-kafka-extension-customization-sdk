@@ -29,7 +29,7 @@ import java.util.Set;
  *
  * @author Georg Held
  * @see <a href=https://www.hivemq.com/docs/kafka/latest/enterprise-extension-for-kafka/kafka.html#kafka-clusters>Kafka
- *         Cluster configuration</a></a>.
+ *         Cluster configuration</a>.
  * @since 4.4.0
  */
 @DoNotImplement
