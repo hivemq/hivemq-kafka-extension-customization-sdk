@@ -13,11 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extensions.kafka.api.transformers;
 
+import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
+
 /**
+ * A marker interface for the input object of the {@link Transformer#init(TransformerInitInput)} method.
+ *
  * @author Christoph Schäbel
+ * @author Georg Held
+ * @since 4.4.0
  */
+@DoNotImplement
 public interface TransformerInitInput {
 
 }
