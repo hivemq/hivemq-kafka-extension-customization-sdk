@@ -68,7 +68,7 @@ repositories {
 }
 
 dependencies {
-    api("com.hivemq:hivemq-extension-sdk:${project.version}")
+    api("com.hivemq:hivemq-extension-sdk:${property("hivemq-sdk.version")}")
     api("org.slf4j:slf4j-api:${property("slf4j.version")}")
 }
 
@@ -93,7 +93,6 @@ tasks.withType<Jar>().configureEach {
 tasks.javadoc {
     title = "${metadata.readableName} ${project.version} API"
 
-    isFailOnError = false
     doLast {
         javaexec {
             main = "-jar"
