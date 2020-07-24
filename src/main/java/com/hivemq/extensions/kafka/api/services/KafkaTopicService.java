@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extensions.kafka.api.services;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -79,7 +80,7 @@ public interface KafkaTopicService {
      * Create multiple Kafka topics on the associated cluster. Use {@link KafkaTopicService#getKafkaTopicStates(Set)} if
      * you would like to check, whether the topics already exists.
      * <p>
-     * * The returned map contains exactly one entry per queried topic in the argument set.
+     * The returned map contains exactly one entry per given topic in the argument set.
      * <p>
      * This method can block the calling transformer.
      *

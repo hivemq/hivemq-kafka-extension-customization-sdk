@@ -63,7 +63,6 @@ metadata {
 /* ******************** dependencies ******************** */
 
 repositories {
-    mavenLocal()
     mavenCentral()
 }
 
@@ -129,12 +128,6 @@ bintray {
             released = Date().toString()
             gpg.apply {
                 sign = true
-            }
-            mavenCentralSync.apply {
-                sync = false
-                user = "${project.findProperty("mavenCentralUser") ?: System.getenv("MAVEN_CENTRAL_USER")}"
-                password = "${project.findProperty("mavenCentralKey") ?: System.getenv("MAVEN_CENTRAL_KEY")}"
-                close = "0"
             }
         }
     }

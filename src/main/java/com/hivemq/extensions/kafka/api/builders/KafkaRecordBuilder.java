@@ -16,6 +16,7 @@
 
 package com.hivemq.extensions.kafka.api.builders;
 
+import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 import com.hivemq.extensions.kafka.api.model.KafkaRecord;
 
@@ -35,6 +36,7 @@ import java.nio.charset.Charset;
  * @author Georg Held
  * @since 4.4.0
  */
+@DoNotImplement
 public interface KafkaRecordBuilder {
 
     /**
@@ -64,7 +66,7 @@ public interface KafkaRecordBuilder {
      * @return this builder
      * @since 4.4.0
      */
-    @NotNull KafkaRecordBuilder key(@NotNull byte[] key);
+    @NotNull KafkaRecordBuilder key(byte @NotNull [] key);
 
     /**
      * Set the key of the Kafka record.
