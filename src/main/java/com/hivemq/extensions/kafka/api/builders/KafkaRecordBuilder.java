@@ -101,7 +101,7 @@ public interface KafkaRecordBuilder {
      * @return this builder
      * @since 4.4.0
      */
-    @NotNull KafkaRecordBuilder value(@NotNull byte[] value);
+    @NotNull KafkaRecordBuilder value(byte @NotNull [] value);
 
     /**
      * Set the value of the Kafka record.
@@ -140,7 +140,7 @@ public interface KafkaRecordBuilder {
      * @return this builder
      * @since 4.4.0
      */
-    @NotNull KafkaRecordBuilder header(@NotNull String key, @NotNull byte[] value);
+    @NotNull KafkaRecordBuilder header(@NotNull String key, byte @NotNull [] value);
 
     /**
      * Add a header to the Kafka record.
