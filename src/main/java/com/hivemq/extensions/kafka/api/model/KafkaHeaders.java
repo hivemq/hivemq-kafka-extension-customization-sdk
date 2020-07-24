@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extensions.kafka.api.model;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -35,13 +36,14 @@ public interface KafkaHeaders {
 
     /**
      * @return all Kafka headers as a {@link List}.
+     * @since 4.4.0
      */
     @Immutable @NotNull List<@NotNull KafkaHeader> asList();
 
     /**
      * @param name the name of the Kafka header to get.
      * @return an {@link Optional} that contains the last Kafka header with the specified name.
-     * @since 4.3.0
+     * @since 4.4.0
      */
     @NotNull Optional<KafkaHeader> getLast(@NotNull String name);
 

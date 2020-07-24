@@ -32,7 +32,7 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
 public interface KafkaCluster {
 
     /**
-     * @return the configured {@code <id>} of the luster.
+     * @return the configured {@code <id>} of the cluster.
      * @since 4.4.0
      */
     @NotNull String getId();

@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extensions.kafka.api.builders;
 
 import com.hivemq.extension.sdk.api.annotations.NotNull;
@@ -185,6 +186,7 @@ public interface KafkaRecordBuilder {
      *
      * @return a new {@link KafkaRecord} containing a snapshot of the current state of this builder.
      * @throws NullPointerException if the topic was not set.
+     * @since 4.4.0
      */
     @NotNull KafkaRecord build();
 }
