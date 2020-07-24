@@ -26,5 +26,5 @@ To use the SDK, add the following dependency to your Maven project:
 
 == License
 
-The HiveMQ Extension SDK is licensed under the `APACHE LICENSE, VERSION 2.0`.
+The HiveMQ Kafka Extension SDK is licensed under the `APACHE LICENSE, VERSION 2.0`.
 A copy of the license can be found link:LICENSE[here].

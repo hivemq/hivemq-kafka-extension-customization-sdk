@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extensions.kafka.api.model;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -39,6 +40,7 @@ public interface KafkaCluster {
 
     /**
      * @return the configured {@code <bootstrap-servers>} of the cluster.
+     * @since 4.4.0
      */
     @NotNull String getBootstrapServers();
 }

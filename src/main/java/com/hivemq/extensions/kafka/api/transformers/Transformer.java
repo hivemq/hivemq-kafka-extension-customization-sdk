@@ -13,9 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extensions.kafka.api.transformers;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
+import com.hivemq.extension.sdk.api.annotations.Immutable;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 
 /**
@@ -23,7 +25,9 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
  *
  * @author Christoph Schäbel
  * @author Georg Held
+ * @since 4.4.0
  */
+@Immutable
 @DoNotImplement
 public interface Transformer<I extends TransformerInitInput> {
 
@@ -31,6 +35,7 @@ public interface Transformer<I extends TransformerInitInput> {
      * Use the init method to set up static runtime context for the execution of your transformer.
      *
      * @param input see the specific input e.g. {@link com.hivemq.extensions.kafka.api.transformers.mqtttokafka.MqttToKafkaInitInput}.
+     * @since 4.4.0
      */
     default void init(@NotNull I input) {
     }
