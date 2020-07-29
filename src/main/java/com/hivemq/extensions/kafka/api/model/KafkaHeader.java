@@ -23,7 +23,7 @@ import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 
 /**
- * * Represents the header of a Kafka record, that was either read from or should be written to a Kafka cluster.
+ * Represents the header of a Kafka record, that was either read from or should be written to a Kafka cluster.
  * <p>
  * The internal state of this interface is completely immutable. All returned {@link ByteBuffer}s are read only and a
  * deep copy of any {@code byte[]} is made for every method call returning one.

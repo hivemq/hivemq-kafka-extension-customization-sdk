@@ -24,7 +24,7 @@ import java.util.List;
  * Implement this transformer for the programmatic creation of {@link com.hivemq.extensions.kafka.api.model.KafkaRecord}s
  * from {@link com.hivemq.extension.sdk.api.packets.publish.PublishPacket}s.
  * <p>
- * Your implementation of the  MqttToKafkaTransformer must be placed in a java archive (.jar) together with all its
+ * Your implementation of the MqttToKafkaTransformer must be placed in a java archive (.jar) together with all its
  * dependencies in the {@code extensions} folder of the HiveMQ Enterprise Extension for Kafka. In addition a {@code
  * <mqtt-to-kafka-transformer>} referencing the implementing class via its canonical name must be configured in the
  * {@code kafka-extension.xml} file.
@@ -36,7 +36,7 @@ import java.util.List;
 public interface MqttToKafkaTransformer extends Transformer<MqttToKafkaInitInput> {
 
     /**
-     * This callback is executed for every mqtt PUBLISH that arrives at your HiveMQ cluster matching the in the {@code
+     * This callback is executed for every MQTT PUBLISH that arrives at your HiveMQ cluster matching the in the {@code
      * <mqtt-to-kafka-transformer>} tag configured {@code <mqtt-topic-filters>}. It allows the publication of any number
      * of {@link com.hivemq.extensions.kafka.api.model.KafkaRecord}s via the {@link MqttToKafkaOutput} object.
      *
