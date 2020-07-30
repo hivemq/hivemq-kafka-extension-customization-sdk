@@ -1,10 +1,10 @@
-= HiveMQ Kafka Extension SDK
+= HiveMQ Kafka Extension Customization SDK
 
 == Features
 
-The HiveMQ Kafka Extension SDK allows the programmatic interaction with the https://www.hivemq.com/extension/hivemq-kafka-extension/[HiveMQ Enterprise Extension for Kafka].
+The HiveMQ Kafka Extension Customization SDK allows the programmatic interaction with the https://www.hivemq.com/extension/hivemq-kafka-extension/[HiveMQ Enterprise Extension for Kafka].
 
-By implementing an extension for the HiveMQ Enterprise Extension for Kafka it is possible to:
+By implementing a customization for the HiveMQ Enterprise Extension for Kafka it is possible to:
 
 * Transform an MQTT PUBLISH into one or multiple Kafka records
 * Query the existence of specific Kafka topics
@@ -12,14 +12,14 @@ By implementing an extension for the HiveMQ Enterprise Extension for Kafka it is
 
 == Using the SDK
 
-The HiveMQ Kafka Extension SDK is available in Maven central, so no special configuration is needed.
+The HiveMQ Kafka Extension Customization SDK is available in Maven central, so no special configuration is needed.
 To use the SDK, add the following dependency to your Maven project:
 
 [source,xml]
 ----
 <dependency>
     <groupId>com.hivemq</groupId>
-    <artifactId>hivemq-kafka-extension-sdk</artifactId>
+    <artifactId>hivemq-kafka-extension-customization-sdk</artifactId>
     <version>4.4.0</version>
 </dependency>
 ----
