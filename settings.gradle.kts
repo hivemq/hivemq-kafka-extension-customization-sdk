@@ -8,4 +8,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "hivemq-kafka-extension-sdk"
+rootProject.name = "hivemq-kafka-extension-customization-sdk"

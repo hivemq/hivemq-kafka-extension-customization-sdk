@@ -14,10 +14,10 @@ plugins {
 /* ******************** metadata ******************** */
 
 group = "com.hivemq"
-description = "SDK for the development of HiveMQ Kafka Extension extensions"
+description = "SDK for the development of HiveMQ Kafka Extension customizations"
 
 metadata {
-    readableName = "HiveMQ Kafka Extension SDK"
+    readableName = "HiveMQ Kafka Extension Customization SDK"
     organization {
         name = "HiveMQ GmbH"
         url = "https://www.hivemq.com/"
@@ -54,7 +54,7 @@ metadata {
     }
     github {
         org = "hivemq"
-        repo = "hivemq-kafka-extension-sdk"
+        repo = "hivemq-kafka-extension-customization-sdk"
         issues()
     }
 }
@@ -103,7 +103,7 @@ tasks.javadoc {
 
 /* ******************** publishing ******************** */
 
-publishing.publications.register<MavenPublication>("kafkaExtensionSdk") {
+publishing.publications.register<MavenPublication>("kafkaExtensionCustomizationSdk") {
     from(components["java"])
 }
 
