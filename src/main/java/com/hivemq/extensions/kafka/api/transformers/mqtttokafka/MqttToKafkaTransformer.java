@@ -25,7 +25,7 @@ import java.util.List;
  * from {@link com.hivemq.extension.sdk.api.packets.publish.PublishPacket}s.
  * <p>
  * Your implementation of the MqttToKafkaTransformer must be placed in a java archive (.jar) together with all its
- * dependencies in the {@code extensions} folder of the HiveMQ Enterprise Extension for Kafka. In addition a {@code
+ * dependencies in the {@code customizations} folder of the HiveMQ Enterprise Extension for Kafka. In addition a {@code
  * <mqtt-to-kafka-transformer>} referencing the implementing class via its canonical name must be configured in the
  * {@code kafka-extension.xml} file.
  *
