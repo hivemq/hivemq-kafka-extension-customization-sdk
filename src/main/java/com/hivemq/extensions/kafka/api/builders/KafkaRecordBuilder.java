@@ -26,7 +26,7 @@ import java.nio.charset.Charset;
 /**
  * The KafkaRecordBuilder enables the creation of {@link KafkaRecord}s via its fluent API.
  * <p>
- * All data in a {@link KafkaRecord} except the topic is optional. Ensure that you set an topic via the {@link
+ * All data in a {@link KafkaRecord} except the topic is optional. Ensure that you set a topic via the {@link
  * KafkaRecordBuilder#topic(String)} method before you call {@link KafkaRecordBuilder#build()}.
  * <p>
  * The internal state of this interface can only be changed via its methods. All arguments, that have mutable data
