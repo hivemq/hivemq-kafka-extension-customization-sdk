@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extensions.kafka.api.model;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -73,7 +74,7 @@ public interface KafkaRecord {
     @NotNull Optional<byte[]> getValueAsByteArray();
 
     /**
-     * @return an {@link Optional} of the timestamp of this record.
+     * @return an {@link Optional} of the timestamp of this record in milliseconds since UNIX epoch.
      * @since 4.4.0
      */
     @NotNull Optional<Long> getTimestamp();
