@@ -74,7 +74,7 @@ public interface KafkaRecord {
     @NotNull Optional<byte[]> getValueAsByteArray();
 
     /**
-     * @return an {@link Optional} of the timestamp of this record in milliseconds since UNIX epoch.
+     * @return an {@link Optional} of the timestamp of this record, in milliseconds since UNIX epoch.
      * @since 4.4.0
      */
     @NotNull Optional<Long> getTimestamp();

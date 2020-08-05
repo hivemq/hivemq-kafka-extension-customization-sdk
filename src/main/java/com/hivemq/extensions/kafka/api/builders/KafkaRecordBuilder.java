@@ -169,7 +169,7 @@ public interface KafkaRecordBuilder {
     /**
      * Set the timestamp of the Kafka record.
      *
-     * @param timestamp the value of the Kafka timestamp in milliseconds since UNIX epoch.
+     * @param timestamp the value of the Kafka timestamp, in milliseconds since UNIX epoch.
      * @return this builder
      * @since 4.4.0
      */
