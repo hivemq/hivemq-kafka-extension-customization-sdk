@@ -91,13 +91,6 @@ tasks.withType<Jar>().configureEach {
 
 tasks.javadoc {
     title = "${metadata.readableName} ${project.version} API"
-
-    doLast {
-        javaexec {
-            main = "-jar"
-            args("${projectDir}/gradle/tools/javadoc-cleaner-1.0.jar")
-        }
-    }
 }
 
 
