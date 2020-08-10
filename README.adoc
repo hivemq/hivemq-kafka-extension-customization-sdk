@@ -1,5 +1,7 @@
 = HiveMQ Kafka Extension Customization SDK
 
+image:https://maven-badges.herokuapp.com/maven-central/com.hivemq/hivemq-kafka-extension-customization-sdk/badge.svg["Maven Central",link="https://maven-badges.herokuapp.com/maven-central/com.hivemq/hivemq-kafka-extension-customization-sdk"]
+
 == Features
 
 The HiveMQ Kafka Extension Customization SDK allows the programmatic interaction with the https://www.hivemq.com/extension/hivemq-kafka-extension/[HiveMQ Enterprise Extension for Kafka].
