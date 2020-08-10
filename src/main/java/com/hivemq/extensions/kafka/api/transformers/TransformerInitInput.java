@@ -28,6 +28,4 @@ import com.hivemq.extension.sdk.api.annotations.Immutable;
  */
 @Immutable
 @DoNotImplement
-public interface TransformerInitInput {
-
-}
+public interface TransformerInitInput {}

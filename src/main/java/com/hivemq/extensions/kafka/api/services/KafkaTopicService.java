@@ -104,12 +104,12 @@ public interface KafkaTopicService {
          * state of this topic on the Kafka cluster can be assumed.
          * <p>
          * Reasons for FAILURE can include, but are not limited to:
-         * <p><ul>
-         * <li> Network degradation between HiveMQ and the Kafka cluster
-         * <li> Insufficient permissions to perform the operation
-         * <li> An unsuitable configuration in either the HiveMQ Enterprise Extension for Kafka or the Kafka cluster
-         * <li> The internal state of the Kafka cluster
-         * </ul><p>
+         * <ul>
+         *   <li> Network degradation between HiveMQ and the Kafka cluster
+         *   <li> Insufficient permissions to perform the operation
+         *   <li> An unsuitable configuration in either the HiveMQ Enterprise Extension for Kafka or the Kafka cluster
+         *   <li> The internal state of the Kafka cluster
+         * </ul>
          *
          * @since 4.4.0
          */

@@ -53,5 +53,4 @@ public interface KafkaHeaders {
      * @since 4.4.0
      */
     @Immutable @NotNull List<@NotNull KafkaHeader> getAllForName(@NotNull String name);
-
 }
