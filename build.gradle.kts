@@ -91,6 +91,19 @@ tasks.withType<Jar>().configureEach {
 
 tasks.javadoc {
     title = "${metadata.readableName} ${project.version} API"
+
+    doLast { // javadoc search fix for jdk 11 https://bugs.openjdk.java.net/browse/JDK-8215291
+        copy {
+            from("${buildDir}/docs/javadoc/search.js")
+            into("${buildDir}/tmp/javadoc/")
+            filter { line -> line.replace("if (ui.item.p == item.l) {", "if (item.m && ui.item.p == item.l) {") }
+        }
+        delete("${buildDir}/docs/javadoc/search.js")
+        copy {
+            from("${buildDir}/tmp/javadoc/search.js")
+            into("${buildDir}/docs/javadoc/")
+        }
+    }
 }
 
 
