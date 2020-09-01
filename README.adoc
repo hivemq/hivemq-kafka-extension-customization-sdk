@@ -1,6 +1,7 @@
 = HiveMQ Kafka Extension Customization SDK
 
 image:https://maven-badges.herokuapp.com/maven-central/com.hivemq/hivemq-kafka-extension-customization-sdk/badge.svg["Maven Central",link="https://maven-badges.herokuapp.com/maven-central/com.hivemq/hivemq-kafka-extension-customization-sdk"]
+image:https://javadoc.io/badge2/com.hivemq/hivemq-kafka-extension-customization-sdk/javadoc.svg["javadoc", link=https://javadoc.io/doc/com.hivemq/hivemq-kafka-extension-customization-sdk]
 
 == Features
 
