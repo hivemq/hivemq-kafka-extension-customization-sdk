@@ -33,6 +33,7 @@ import java.util.List;
  * @author Georg Held
  * @since 4.4.0
  */
+@FunctionalInterface
 public interface MqttToKafkaTransformer extends Transformer<MqttToKafkaInitInput> {
 
     /**
@@ -44,7 +45,7 @@ public interface MqttToKafkaTransformer extends Transformer<MqttToKafkaInitInput
      *               and the {@link com.hivemq.extensions.kafka.api.model.KafkaCluster} information. The {@link
      *               com.hivemq.extensions.kafka.api.services.KafkaTopicService} can be accessed.
      * @param output pass the list of new {@link com.hivemq.extensions.kafka.api.model.KafkaRecord}s to the {@link
-     *               MqttToKafkaOutput#setKafkaRecords(List)} methods.
+     *               MqttToKafkaOutput#setKafkaRecords(List)} method.
      * @since 4.4.0
      */
     void transformMqttToKafka(@NotNull MqttToKafkaInput input, @NotNull MqttToKafkaOutput output);
