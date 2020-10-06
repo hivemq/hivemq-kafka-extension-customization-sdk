@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.hivemq.extensions.kafka.api.model;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
@@ -52,11 +53,11 @@ public interface KafkaHeader {
      * @return the value of this header.
      * @since 4.4.0
      */
-    @NotNull byte[] getValueAsByteArray();
+    byte @NotNull [] getValueAsByteArray();
 
     /**
-     * @return the value of this header as a string. {@link java.nio.charset.StandardCharsets#UTF_8} is used for the
-     *         decoding.
+     * @return the value of this header as a string. {@link java.nio.charset.StandardCharsets#UTF_8 UTF_8} is used for
+     *         the decoding.
      * @since 4.4.0
      */
     @NotNull String getValueAsString();
