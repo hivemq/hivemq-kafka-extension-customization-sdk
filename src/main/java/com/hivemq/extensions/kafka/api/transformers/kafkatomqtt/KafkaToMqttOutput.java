@@ -28,22 +28,22 @@ public interface KafkaToMqttOutput {
     /**
      * Sets the {@link Publish}s, that will be published by HiveMQ after the {@link
      * KafkaToMqttTransformer#transformKafkaToMqtt(KafkaToMqttInput, KafkaToMqttOutput)} call returns. The HiveMQ
-     * Enterprise Extension for Kafka will publish these publishes in the order provided by the {@code mqttPublishes}
+     * Enterprise Extension for Kafka will publish these publishes in the order provided by the {@code publishes}
      * argument.
      * <p>
-     * If desired, the same publish can occupy multiple places in the {@code mqttPublishes} list. When no publish shall
-     * be published by HiveMQ for a {@link com.hivemq.extensions.kafka.api.model.KafkaRecord}, call this method with an
+     * If desired, the same publish can occupy multiple places in the {@code publishes} list. When no publish shall be
+     * published by HiveMQ for a {@link com.hivemq.extensions.kafka.api.model.KafkaRecord}, call this method with an
      * empty list.
      * <p>
      * Use the {@link #newPublishBuilder() PublishBuilder} to create new publishes as desired.
      * <p>
      * Each additional call of this method will overwrite the previous one.
      *
-     * @param mqttPublishes a list of to be published {@link Publish}s.
-     * @throws NullPointerException     if {@code mqttPublishes} or any element of it is null.
-     * @throws IllegalArgumentException if any element in {@code mqttPublishes} was not created via a {@link
+     * @param publishes a list of to be published {@link Publish}s.
+     * @throws NullPointerException     if {@code publishes} or any element of it is null.
+     * @throws IllegalArgumentException if any element in {@code publishes} was not created via a {@link
      *                                  PublishBuilder}.
      * @since 4.5.0
      */
-    void setMqttPublishes(@NotNull List<@NotNull Publish> mqttPublishes);
+    void setPublishes(@NotNull List<@NotNull Publish> publishes);
 }

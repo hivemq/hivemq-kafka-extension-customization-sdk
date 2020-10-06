@@ -27,7 +27,7 @@ public interface KafkaToMqttTransformer extends Transformer<KafkaToMqttInitInput
      * @param input  the {@link KafkaToMqttInput} contains the triggering {@link com.hivemq.extensions.kafka.api.model.KafkaRecord
      *               KafkaRecord} and the {@link com.hivemq.extensions.kafka.api.model.KafkaCluster KafkaCluster}
      *               information.
-     * @param output the {@link KafkaToMqttOutput} allows to {@link KafkaToMqttOutput#setMqttPublishes(java.util.List)
+     * @param output the {@link KafkaToMqttOutput} allows to {@link KafkaToMqttOutput#setPublishes(java.util.List)
      *               provide a list of Publishes}.
      * @since 4.5.0
      */
