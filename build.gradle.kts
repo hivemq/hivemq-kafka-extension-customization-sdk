@@ -67,7 +67,7 @@ repositories {
 }
 
 dependencies {
-    api("com.hivemq:hivemq-extension-sdk:${property("hivemq-sdk.version")}")
+    api("com.hivemq:hivemq-extension-sdk:$version")
     api("org.slf4j:slf4j-api:${property("slf4j.version")}")
 }
 
