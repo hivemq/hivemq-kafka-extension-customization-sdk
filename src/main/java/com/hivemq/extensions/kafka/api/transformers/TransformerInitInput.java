@@ -16,8 +16,10 @@
 
 package com.hivemq.extensions.kafka.api.transformers;
 
+import com.codahale.metrics.MetricRegistry;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.Immutable;
+import com.hivemq.extension.sdk.api.annotations.NotNull;
 
 /**
  * A marker interface for the input object of the {@link Transformer#init(TransformerInitInput)} method.
@@ -28,4 +30,14 @@ import com.hivemq.extension.sdk.api.annotations.Immutable;
  */
 @Immutable
 @DoNotImplement
-public interface TransformerInitInput {}
+public interface TransformerInitInput {
+
+    /**
+     * Getter Method for the {@link MetricRegistry} of this HiveMQ node. It is possible to add own metrics to monitor
+     * custom business logic.
+     *
+     * @return the {@link MetricRegistry} of this HiveMQ node
+     */
+    @NotNull MetricRegistry getMetricRegistry();
+
+}
