@@ -36,7 +36,7 @@ import java.util.List;
 public interface KafkaToMqttOutput {
 
     /**
-     * @return an new {@link PublishBuilder}.
+     * @return a new {@link PublishBuilder}.
      * @since 4.5.0
      */
     @NotNull PublishBuilder newPublishBuilder();
