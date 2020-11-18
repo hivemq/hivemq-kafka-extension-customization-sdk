@@ -29,6 +29,7 @@ import com.hivemq.extensions.kafka.api.model.KafkaRecord;
  * The MqttToKafkaInput allows access to the {@link KafkaCluster}.
  *
  * @author Christoph Schäbel
+ * @author Geord Held
  * @since 4.5.0
  */
 @Immutable

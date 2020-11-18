@@ -29,6 +29,7 @@ import com.hivemq.extensions.kafka.api.transformers.Transformer;
  * the {@code kafka-extension.xml} file.
  *
  * @author Christoph Schäbel
+ * @author Georg Held
  * @since 4.5.0
  */
 @FunctionalInterface

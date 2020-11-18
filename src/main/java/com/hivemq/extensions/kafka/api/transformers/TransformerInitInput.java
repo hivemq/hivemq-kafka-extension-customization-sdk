@@ -33,10 +33,11 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
 public interface TransformerInitInput {
 
     /**
-     * Getter Method for the {@link MetricRegistry} of this HiveMQ node. It is possible to add own metrics to monitor
+     * Get the {@link MetricRegistry} of this HiveMQ node. It is possible to add own metrics to monitor
      * custom business logic.
      *
-     * @return the {@link MetricRegistry} of the HiveMQ node this Enterprise Extension for Kafka is running on
+     * @return the {@link MetricRegistry} of the HiveMQ node this Enterprise Extension for Kafka is running on.
+     * @since 4.5.0
      */
     @NotNull MetricRegistry getMetricRegistry();
 

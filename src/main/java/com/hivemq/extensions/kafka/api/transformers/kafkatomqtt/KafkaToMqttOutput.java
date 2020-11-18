@@ -27,9 +27,10 @@ import java.util.List;
  * The output parameter of the {@link KafkaToMqttTransformer}. It allows access to the {@link PublishBuilder}.
  * <p>
  * After the {@link KafkaToMqttTransformer#transformKafkaToMqtt(KafkaToMqttInput, KafkaToMqttOutput)} method returns the
- * {@link Publish}s given to this output will be published by HiveMQ.
+ * {@link Publish}es given to this output will be published by HiveMQ.
  *
  * @author Christoph Schäbel
+ * @author Georg Held
  * @since 4.5.0
  */
 @DoNotImplement
@@ -42,7 +43,7 @@ public interface KafkaToMqttOutput {
     @NotNull PublishBuilder newPublishBuilder();
 
     /**
-     * Sets the {@link Publish}s, that will be published by HiveMQ after the {@link
+     * Sets the {@link Publish}es, that will be published by HiveMQ after the {@link
      * KafkaToMqttTransformer#transformKafkaToMqtt(KafkaToMqttInput, KafkaToMqttOutput)} call returns. The HiveMQ
      * Enterprise Extension for Kafka will publish these publishes in the order provided by the {@code publishes}
      * argument.
@@ -55,7 +56,7 @@ public interface KafkaToMqttOutput {
      * <p>
      * Each additional call of this method will overwrite the previous one.
      *
-     * @param publishes a list of to be published {@link Publish}s.
+     * @param publishes a list of to be published {@link Publish}es.
      * @throws NullPointerException     if {@code publishes} or any element of it is null.
      * @throws IllegalArgumentException if any element in {@code publishes} was not created via a {@link
      *                                  PublishBuilder}.
