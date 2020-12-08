@@ -44,8 +44,8 @@ public interface KafkaToMqttTransformer extends Transformer<KafkaToMqttInitInput
      * polled by the HiveMQ Enterprise Extension for Kafka and matches the {@code <mqtt-to-kafka-transformer>} tag
      * configured in the {@code <mqtt-topic-filters>}. It allows the publication of any number of {@link
      * com.hivemq.extension.sdk.api.services.publish.Publish Publishes} via the {@link KafkaToMqttOutput} object. This
-     * method is called by multiple Threads concurrently and the implementation needs to be able to handle this. This
-     * method must not throw any RuntimeException.
+     * method is called by multiple threads concurrently. Extensions are responsible for their own exception handling
+     * and this method must not throw any {@link Exception}.
      *
      * @param input  the {@link KafkaToMqttInput} contains the triggering {@link com.hivemq.extensions.kafka.api.model.KafkaRecord
      *               KafkaRecord} and the {@link com.hivemq.extensions.kafka.api.model.KafkaCluster KafkaCluster}
