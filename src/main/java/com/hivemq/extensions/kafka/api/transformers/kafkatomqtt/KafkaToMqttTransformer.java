@@ -24,7 +24,7 @@ import com.hivemq.extensions.kafka.api.transformers.Transformer;
  * Implement this transformer for the programmatic creation of {@link com.hivemq.extension.sdk.api.services.publish.Publish
  * Publishes} from {@link com.hivemq.extensions.kafka.api.model.KafkaRecord KafkaRecords}. One instance of the
  * implementing class is created per reference in the kafka-configuration.xml. The methods of this interface may be
- * called concurrently and must be {@link com.hivemq.extension.sdk.api.annotations.ThreadSafe}.
+ * called concurrently and must be thread-safe.
  * <p>
  * Your implementation of the KafkaToMqttTransformer must be placed in a Java archive (.jar) together with all its
  * dependencies in the {@code customizations} folder of the HiveMQ Enterprise Extension for Kafka. In addition a {@code
