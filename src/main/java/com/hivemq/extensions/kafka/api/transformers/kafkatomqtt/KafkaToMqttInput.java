@@ -13,44 +13,38 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.hivemq.extensions.kafka.api.transformers.mqtttokafka;
+
+package com.hivemq.extensions.kafka.api.transformers.kafkatomqtt;
 
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.Immutable;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
-import com.hivemq.extension.sdk.api.packets.publish.PublishPacket;
 import com.hivemq.extensions.kafka.api.model.KafkaCluster;
-import com.hivemq.extensions.kafka.api.services.KafkaTopicService;
+import com.hivemq.extensions.kafka.api.model.KafkaRecord;
 
 /**
- * The input parameter of the {@link MqttToKafkaTransformer}. It contains the information of the to be transformed
- * {@link PublishPacket}.
+ * The input parameter of the {@link KafkaToMqttTransformer}. It contains the information of the to be transformed
+ * {@link KafkaRecord}.
  * <p>
- * The MqttToKafkaInput allows access to the {@link KafkaCluster} and the {@link KafkaTopicService} for this cluster.
+ * The MqttToKafkaInput allows access to the {@link KafkaCluster}.
  *
  * @author Christoph Schäbel
  * @author Georg Held
- * @since 4.4.0
+ * @since 4.5.0
  */
 @Immutable
 @DoNotImplement
-public interface MqttToKafkaInput {
+public interface KafkaToMqttInput {
 
     /**
-     * @return the {@link PublishPacket} that triggered this transformer call.
-     * @since 4.4.0
+     * @return the {@link KafkaRecord} that triggered this transformer call.
+     * @since 4.5.0
      */
-    @NotNull PublishPacket getPublishPacket();
+    @NotNull KafkaRecord getKafkaRecord();
 
     /**
-     * @return the {@link KafkaTopicService} to interact with topics on the Kafka cluster.
-     * @since 4.4.0
-     */
-    @NotNull KafkaTopicService getKafkaTopicService();
-
-    /**
-     * @return the {@link KafkaCluster} this transformer is associated with.
-     * @since 4.4.0
+     * @return the {@link KafkaCluster} the transformer is associated with.
+     * @since 4.5.0
      */
     @NotNull KafkaCluster getKafkaCluster();
 }

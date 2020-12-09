@@ -14,31 +14,18 @@
  * limitations under the License.
  */
 
-package com.hivemq.extensions.kafka.api.transformers;
+package com.hivemq.extensions.kafka.api.transformers.kafkatomqtt;
 
-import com.codahale.metrics.MetricRegistry;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.Immutable;
-import com.hivemq.extension.sdk.api.annotations.NotNull;
+import com.hivemq.extensions.kafka.api.transformers.TransformerInitInput;
 
 /**
- * A marker interface for the input object of the {@link Transformer#init(TransformerInitInput)} method.
+ * Provides context for the set up of a {@link KafkaToMqttTransformer}.
  *
- * @author Christoph Schäbel
  * @author Georg Held
- * @since 4.4.0
+ * @since 4.5.0
  */
 @Immutable
 @DoNotImplement
-public interface TransformerInitInput {
-
-    /**
-     * Get the {@link MetricRegistry} of this HiveMQ node. It is possible to add own metrics to monitor
-     * custom business logic.
-     *
-     * @return the {@link MetricRegistry} of the HiveMQ node this Enterprise Extension for Kafka is running on.
-     * @since 4.5.0
-     */
-    @NotNull MetricRegistry getMetricRegistry();
-
-}
+public interface KafkaToMqttInitInput extends TransformerInitInput {}
