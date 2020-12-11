@@ -31,3 +31,11 @@ To use the SDK, add the following dependency to your Maven project:
 
 The HiveMQ Kafka Extension SDK is licensed under the `APACHE LICENSE, VERSION 2.0`.
 A copy of the license can be found link:LICENSE[here].
+
+== Setup
+To be able to use the latest changes of the `hivemq-extension-sdk` please check out the https://github.com/hivemq/hivemq-extension-sdk repository in the same folder as the current project.
+(See line `includeBuild("../hivemq-extension-sdk")` in `settings.gradle.kts`).
+
+NOTE: You can also change the path in the `settings.gradle.kts` to the path of your `hivemq-extension-sdk`.
+
+Otherwise, it will not be possible to publish develop snapshots to your local repository.

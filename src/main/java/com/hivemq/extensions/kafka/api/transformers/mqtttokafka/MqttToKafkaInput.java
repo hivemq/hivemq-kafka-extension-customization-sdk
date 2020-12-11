@@ -37,16 +37,16 @@ import com.hivemq.extensions.kafka.api.services.KafkaTopicService;
 public interface MqttToKafkaInput {
 
     /**
-     * @return the {@link KafkaTopicService} to interact with topics on the Kafka cluster.
-     * @since 4.4.0
-     */
-    @NotNull KafkaTopicService getKafkaTopicService();
-
-    /**
      * @return the {@link PublishPacket} that triggered this transformer call.
      * @since 4.4.0
      */
     @NotNull PublishPacket getPublishPacket();
+
+    /**
+     * @return the {@link KafkaTopicService} to interact with topics on the Kafka cluster.
+     * @since 4.4.0
+     */
+    @NotNull KafkaTopicService getKafkaTopicService();
 
     /**
      * @return the {@link KafkaCluster} this transformer is associated with.

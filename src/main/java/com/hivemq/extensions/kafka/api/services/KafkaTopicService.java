@@ -91,7 +91,7 @@ public interface KafkaTopicService {
      * @throws NullPointerException if {@code topics} is or contains null.
      * @since 4.4.0
      */
-    @NotNull Map<String, @NotNull KafkaTopicState> createKafkaTopics(@NotNull Set<@NotNull String> topics);
+    @Immutable @NotNull Map<String, @NotNull KafkaTopicState> createKafkaTopics(@NotNull Set<@NotNull String> topics);
 
     /**
      * KafkaTopicState encodes the current known state of a Kafka topic on the associated cluster.
