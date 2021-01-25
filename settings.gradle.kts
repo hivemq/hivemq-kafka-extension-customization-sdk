@@ -11,7 +11,5 @@ pluginManagement {
 rootProject.name = "hivemq-kafka-extension-customization-sdk"
 
 if (file("../hivemq-extension-sdk").exists()) {
-    if (gradle.parent == null) { // not part of a composite build
-        includeBuild("../hivemq-extension-sdk")
-    }
+    includeBuild("../hivemq-extension-sdk")
 }
