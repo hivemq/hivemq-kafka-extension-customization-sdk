@@ -91,7 +91,7 @@ tasks.withType<Jar>().configureEach {
 
 tasks.javadoc {
     title = "${metadata.readableName} ${project.version} API"
-    isFailOnError = false
+
     doLast { // javadoc search fix for jdk 11 https://bugs.openjdk.java.net/browse/JDK-8215291
         copy {
             from("${buildDir}/docs/javadoc/search.js")
