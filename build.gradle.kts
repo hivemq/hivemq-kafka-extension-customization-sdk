@@ -17,44 +17,44 @@ group = "com.hivemq"
 description = "SDK for the development of HiveMQ Kafka Extension customizations"
 
 metadata {
-    readableName = "HiveMQ Kafka Extension Customization SDK"
+    readableName.set("HiveMQ Kafka Extension Customization SDK")
     organization {
-        name = "HiveMQ GmbH"
-        url = "https://www.hivemq.com/"
+        name.set("HiveMQ GmbH")
+        url.set("https://www.hivemq.com/")
     }
     license {
         apache2()
     }
     developers {
         developer {
-            id = "cschaebe"
-            name = "Christoph Schaebel"
-            email = "christoph.schaebel@hivemq.com"
+            id.set("cschaebe")
+            name.set("Christoph Schaebel")
+            email.set("christoph.schaebel@hivemq.com")
         }
         developer {
-            id = "lbrandl"
-            name = "Lukas Brandl"
-            email = "lukas.brandl@hivemq.com"
+            id.set("lbrandl")
+            name.set("Lukas Brandl")
+            email.set("lukas.brandl@hivemq.com")
         }
         developer {
-            id = "flimpoeck"
-            name = "Florian Limpoeck"
-            email = "florian.limpoeck@hivemq.com"
+            id.set("flimpoeck")
+            name.set("Florian Limpoeck")
+            email.set("florian.limpoeck@hivemq.com")
         }
         developer {
-            id = "sauroter"
-            name = "Georg Held"
-            email = "georg.held@hivemq.com"
+            id.set("sauroter")
+            name.set("Georg Held")
+            email.set("georg.held@hivemq.com")
         }
         developer {
-            id = "SgtSilvio"
-            name = "Silvio Giebl"
-            email = "silvio.giebl@hivemq.com"
+            id.set("SgtSilvio")
+            name.set("Silvio Giebl")
+            email.set("silvio.giebl@hivemq.com")
         }
     }
     github {
-        org = "hivemq"
-        repo = "hivemq-kafka-extension-customization-sdk"
+        org.set("hivemq")
+        repo.set("hivemq-kafka-extension-customization-sdk")
         issues()
     }
 }
@@ -85,23 +85,23 @@ java {
 tasks.withType<Jar>().configureEach {
     manifest.attributes(
             "Implementation-Title" to project.name,
-            "Implementation-Vendor" to metadata.organization.name,
+            "Implementation-Vendor" to metadata.organization!!.name.get(),
             "Implementation-Version" to project.version)
 }
 
 tasks.javadoc {
-    title = "${metadata.readableName} ${project.version} API"
+    title = "${metadata.readableName.get()} ${project.version} API"
 
     doLast { // javadoc search fix for jdk 11 https://bugs.openjdk.java.net/browse/JDK-8215291
         copy {
-            from("${buildDir}/docs/javadoc/search.js")
-            into("${buildDir}/tmp/javadoc/")
+            from("$buildDir/docs/javadoc/search.js")
+            into("$buildDir/tmp/javadoc/")
             filter { line -> line.replace("if (ui.item.p == item.l) {", "if (item.m && ui.item.p == item.l) {") }
         }
-        delete("${buildDir}/docs/javadoc/search.js")
+        delete("$buildDir/docs/javadoc/search.js")
         copy {
-            from("${buildDir}/tmp/javadoc/search.js")
-            into("${buildDir}/docs/javadoc/")
+            from("$buildDir/tmp/javadoc/search.js")
+            into("$buildDir/docs/javadoc/")
         }
     }
 }
@@ -109,8 +109,10 @@ tasks.javadoc {
 
 /* ******************** publishing ******************** */
 
-publishing.publications.register<MavenPublication>("kafkaExtensionCustomizationSdk") {
-    from(components["java"])
+publishing {
+    publications.register<MavenPublication>("kafkaExtensionCustomizationSdk") {
+        from(components["java"])
+    }
 }
 
 bintray {
@@ -124,10 +126,10 @@ bintray {
         repo = "HiveMQ"
         name = project.name
         desc = project.description
-        websiteUrl = metadata.url
-        issueTrackerUrl = metadata.issueManagement.url
-        vcsUrl = metadata.scm.url
-        setLicenses(metadata.license.shortName)
+        websiteUrl = metadata.url.get()
+        issueTrackerUrl = metadata.issueManagement!!.url.get()
+        vcsUrl = metadata.scm!!.url.get()
+        setLicenses(metadata.license!!.shortName.get())
         setLabels("hivemq-kafka-extension", "sdk", "mqtt", "kafka")
         publicDownloadNumbers = false
         version.apply {
@@ -146,6 +148,6 @@ afterEvaluate {
 /* ******************** checks ******************** */
 
 license {
-    header = file("${projectDir}/HEADER")
+    header = file("$projectDir/HEADER")
     mapping("java", "SLASHSTAR_STYLE")
 }
