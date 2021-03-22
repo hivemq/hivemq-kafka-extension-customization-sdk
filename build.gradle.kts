@@ -8,6 +8,8 @@ plugins {
     id("com.github.sgtsilvio.gradle.utf8")
     id("com.github.sgtsilvio.gradle.metadata")
     id("com.github.sgtsilvio.gradle.javadoc-links")
+    id("io.github.gradle-nexus.publish-plugin")
+    signing
 }
 
 
@@ -112,37 +114,41 @@ tasks.javadoc {
 publishing {
     publications.register<MavenPublication>("kafkaExtensionCustomizationSdk") {
         from(components["java"])
-    }
-}
-
-bintray {
-    user = "${project.findProperty("bintrayUser") ?: System.getenv("BINTRAY_USER")}"
-    key = "${project.findProperty("bintrayApiKey") ?: System.getenv("BINTRAY_API_KEY")}"
-    dryRun = false
-    publish = false
-    override = false
-    pkg.apply {
-        userOrg = "hivemq"
-        repo = "HiveMQ"
-        name = project.name
-        desc = project.description
-        websiteUrl = metadata.url.get()
-        issueTrackerUrl = metadata.issueManagement!!.url.get()
-        vcsUrl = metadata.scm!!.url.get()
-        setLicenses(metadata.license!!.shortName.get())
-        setLabels("hivemq-kafka-extension", "sdk", "mqtt", "kafka")
-        publicDownloadNumbers = false
-        version.apply {
-            released = Date().toString()
-            gpg.apply {
-                sign = true
+        pom {
+            name.set(project.name)
+            description.set(project.description)
+            url.set(project.metadata.organization!!.url)
+            licenses {
+                project.metadata.license
+            }
+            developers {
+                project.metadata.developers
+            }
+            scm {
+                connection.set("scm:git:git://github.com/hivemq/${project.metadata.github!!.repo}.git")
+                developerConnection.set("scm:git:ssh://github.com/hivemq/${project.metadata.github!!.repo}.git")
+                url.set("http://github.com/hivemq/${project.metadata.github!!.repo}/")
             }
         }
     }
 }
-afterEvaluate {
-    bintray.setPublications(*publishing.publications.withType<MavenPublication>().names.toTypedArray())
+
+nexusPublishing {
+    repositories {
+        sonatype {
+            username.set("${project.findProperty("sonatypeUser") ?: System.getenv("SONATYPE_USERNAME")}")
+            password.set("${project.findProperty("sonatypePassword") ?: System.getenv("SONATYPE_PASSWORD")}")
+        }
+    }
 }
+
+signing {
+    val signingKey = "${project.findProperty("signingKey") ?: System.getenv("SIGN_KEY")}";
+    val signingPassword = "${project.findProperty("signingPassword") ?: System.getenv("SIGN_KEY_PASS")}";
+    useInMemoryPgpKeys(signingKey, signingPassword)
+    sign(publishing.publications["kafkaExtensionCustomizationSdk"])
+}
+
 
 
 /* ******************** checks ******************** */
