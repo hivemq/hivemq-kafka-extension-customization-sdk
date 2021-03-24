@@ -3,7 +3,6 @@ import java.util.*
 plugins {
     id("java-library")
     id("maven-publish")
-    id("com.jfrog.bintray")
     id("com.github.hierynomus.license")
     id("com.github.sgtsilvio.gradle.utf8")
     id("com.github.sgtsilvio.gradle.metadata")
