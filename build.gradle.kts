@@ -61,13 +61,30 @@ metadata {
 
 /* ******************** dependencies ******************** */
 
+val internalPlatform by configurations.creating {
+    isVisible = false
+    isCanBeConsumed = false
+    isCanBeResolved = false
+}
+
+configurations {
+    compileClasspath.get().extendsFrom(internalPlatform)
+    runtimeClasspath.get().extendsFrom(internalPlatform)
+    testCompileClasspath.get().extendsFrom(internalPlatform)
+    testRuntimeClasspath.get().extendsFrom(internalPlatform)
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
+
+    /* HiveMQ platform constraints */
+    internalPlatform(platform("com.hivemq:hivemq-platform:$version"))
+
     api("com.hivemq:hivemq-extension-sdk:$version")
-    api("org.slf4j:slf4j-api:${property("slf4j.version")}")
+    api("org.slf4j:slf4j-api")
 }
 
 
@@ -114,6 +131,15 @@ publishing {
     publications {
         register<MavenPublication>("maven") {
             from(components["java"])
+
+            versionMapping {
+                usage("java-api") {
+                    fromResolutionResult()
+                }
+                usage("java-runtime") {
+                    fromResolutionResult()
+                }
+            }
         }
     }
 }
