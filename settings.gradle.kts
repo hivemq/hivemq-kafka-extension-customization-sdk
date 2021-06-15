@@ -13,6 +13,5 @@ pluginManagement {
 if (file("../hivemq-extension-sdk").exists()) {
     includeBuild("../hivemq-extension-sdk")
 }
-if (file("../hivemq-platform").exists()) {
-    includeBuild("../hivemq-platform")
-}
+
+includeBuild("../hivemq-platform")
