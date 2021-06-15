@@ -81,7 +81,7 @@ repositories {
 dependencies {
 
     /* HiveMQ platform constraints */
-    internalPlatform(platform("com.hivemq:hivemq-platform:$version"))
+    internalPlatform(platform("com.hivemq:hivemq-main-platform"))
 
     api("com.hivemq:hivemq-extension-sdk:$version")
     api("org.slf4j:slf4j-api")
