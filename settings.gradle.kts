@@ -10,11 +10,11 @@ pluginManagement {
     }
 }
 
-if (file("../hivemq-extension-sdk").exists()) {
-    includeBuild("../hivemq-extension-sdk")
-}
 if (file("../plugins").exists()) {
     includeBuild("../plugins")
+}
+if (file("../hivemq-extension-sdk").exists()) {
+    includeBuild("../hivemq-extension-sdk")
 }
 
 includeBuild("../hivemq-platform")
