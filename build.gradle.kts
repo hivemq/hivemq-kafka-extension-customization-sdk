@@ -7,9 +7,9 @@ buildscript {
 }
 
 plugins {
-    id("java-library")
-    id("maven-publish")
-    id("signing")
+    `java-library`
+    `maven-publish`
+    signing
     id("io.github.gradle-nexus.publish-plugin")
     id("com.github.hierynomus.license")
     id("com.github.sgtsilvio.gradle.utf8")
@@ -21,7 +21,6 @@ if (gradle.includedBuilds.find { it.name == "plugins"} != null) {
     apply(plugin = "com.hivemq.version-updater")
     project.ext.set("versionUpdaterFiles", arrayOf("README.adoc"))
 }
-
 
 /* ******************** metadata ******************** */
 
@@ -38,29 +37,24 @@ metadata {
         apache2()
     }
     developers {
-        developer {
-            id.set("cschaebe")
-            name.set("Christoph Schaebel")
+        register("cschaebe") {
+            fullName.set("Christoph Schaebel")
             email.set("christoph.schaebel@hivemq.com")
         }
-        developer {
-            id.set("lbrandl")
-            name.set("Lukas Brandl")
+        register("lbrandl") {
+            fullName.set("Lukas Brandl")
             email.set("lukas.brandl@hivemq.com")
         }
-        developer {
-            id.set("flimpoeck")
-            name.set("Florian Limpoeck")
+        register("flimpoeck") {
+            fullName.set("Florian Limpoeck")
             email.set("florian.limpoeck@hivemq.com")
         }
-        developer {
-            id.set("sauroter")
-            name.set("Georg Held")
+        register("sauroter") {
+            fullName.set("Georg Held")
             email.set("georg.held@hivemq.com")
         }
-        developer {
-            id.set("SgtSilvio")
-            name.set("Silvio Giebl")
+        register("SgtSilvio") {
+            fullName.set("Silvio Giebl")
             email.set("silvio.giebl@hivemq.com")
         }
     }
@@ -70,7 +64,6 @@ metadata {
         issues()
     }
 }
-
 
 /* ******************** dependencies ******************** */
 
@@ -100,7 +93,6 @@ dependencies {
     api("org.slf4j:slf4j-api")
 }
 
-
 /* ******************** java ******************** */
 
 java {
@@ -115,7 +107,7 @@ java {
 tasks.withType<Jar> {
     manifest.attributes(
         "Implementation-Title" to project.name,
-        "Implementation-Vendor" to metadata.organization!!.name.get(),
+        "Implementation-Vendor" to metadata.organization.get().name.get(),
         "Implementation-Version" to project.version
     )
 }
@@ -136,7 +128,6 @@ tasks.javadoc {
         }
     }
 }
-
 
 /* ******************** publishing ******************** */
 
@@ -169,7 +160,6 @@ nexusPublishing {
         sonatype()
     }
 }
-
 
 /* ******************** checks ******************** */
 
