@@ -78,6 +78,7 @@ configurations {
     runtimeClasspath.get().extendsFrom(internalPlatform)
     testCompileClasspath.get().extendsFrom(internalPlatform)
     testRuntimeClasspath.get().extendsFrom(internalPlatform)
+    javadocLinks.get().shouldResolveConsistentlyWith(runtimeClasspath.get())
 }
 
 repositories {
