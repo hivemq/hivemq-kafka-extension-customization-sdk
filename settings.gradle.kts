@@ -8,12 +8,13 @@ pluginManagement {
         id("com.github.sgtsilvio.gradle.metadata") version "${extra["plugin.metadata.version"]}"
         id("com.github.sgtsilvio.gradle.javadoc-links") version "${extra["plugin.javadoc-links.version"]}"
     }
+
+    if (file("../plugins").exists()) {
+        includeBuild("../plugins")
+    }
 }
 
 if (file("../hivemq-extension-sdk").exists()) {
     includeBuild("../hivemq-extension-sdk")
-}
-if (file("../plugins").exists()) {
-    includeBuild("../plugins")
 }
 includeBuild("../hivemq-platform")
