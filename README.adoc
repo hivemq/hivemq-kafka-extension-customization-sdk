@@ -1,7 +1,7 @@
 = HiveMQ Kafka Extension Customization SDK
 
-image:https://maven-badges.herokuapp.com/maven-central/com.hivemq/hivemq-kafka-extension-customization-sdk/badge.svg["Maven Central",link="https://maven-badges.herokuapp.com/maven-central/com.hivemq/hivemq-kafka-extension-customization-sdk"]
-image:https://javadoc.io/badge2/com.hivemq/hivemq-kafka-extension-customization-sdk/javadoc.svg["javadoc", link=https://javadoc.io/doc/com.hivemq/hivemq-kafka-extension-customization-sdk]
+image:https://maven-badges.herokuapp.com/maven-central/com.hivemq/hivemq-kafka-extension-customization-sdk/badge.svg?style=for-the-badge["Maven Central",link="https://maven-badges.herokuapp.com/maven-central/com.hivemq/hivemq-kafka-extension-customization-sdk"]
+image:https://javadoc.io/badge2/com.hivemq/hivemq-kafka-extension-customization-sdk/javadoc.svg?style=for-the-badge["javadoc",link=https://javadoc.io/doc/com.hivemq/hivemq-kafka-extension-customization-sdk]
 
 == Features
 
@@ -33,6 +33,7 @@ The HiveMQ Kafka Extension SDK is licensed under the `APACHE LICENSE, VERSION 2.
 A copy of the license can be found link:LICENSE[here].
 
 == Setup
+
 To be able to use the latest changes of the `hivemq-extension-sdk` please check out the https://github.com/hivemq/hivemq-extension-sdk repository in the same folder as the current project.
 (See line `includeBuild("../hivemq-extension-sdk")` in `settings.gradle.kts`).
 
