@@ -164,6 +164,6 @@ nexusPublishing {
 /* ******************** checks ******************** */
 
 license {
-    header = projectDir.resolve("HEADER")
+    header = file("HEADER")
     mapping("java", "SLASHSTAR_STYLE")
 }
