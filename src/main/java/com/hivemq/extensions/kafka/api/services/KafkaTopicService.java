@@ -135,6 +135,7 @@ public interface KafkaTopicService {
         CREATED,
         /**
          * This topic has not been configured yet
+         *
          * @since 4.8.0
          */
         NOT_CONFIGURED,
