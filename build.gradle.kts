@@ -21,8 +21,6 @@ plugins.withId("com.hivemq.version-updater") {
     project.ext.set("versionUpdaterFiles", arrayOf("README.adoc"))
 }
 
-/* ******************** metadata ******************** */
-
 group = "com.hivemq"
 description = "SDK for the development of HiveMQ Kafka Extension customizations"
 
@@ -85,8 +83,6 @@ repositories {
 }
 
 dependencies {
-
-    /* HiveMQ platform constraints */
     internalPlatform(platform("com.hivemq:hivemq-main-platform"))
 
     api("com.hivemq:hivemq-extension-sdk:$version")
@@ -99,7 +95,6 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(11))
     }
-
     withJavadocJar()
     withSourcesJar()
 }
