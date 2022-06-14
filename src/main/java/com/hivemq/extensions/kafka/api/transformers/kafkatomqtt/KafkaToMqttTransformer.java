@@ -21,7 +21,8 @@ import com.hivemq.extension.sdk.api.annotations.ThreadSafe;
 import com.hivemq.extensions.kafka.api.transformers.Transformer;
 
 /**
- * Implement this transformer for the programmatic creation of {@link com.hivemq.extension.sdk.api.services.publish.Publish
+ * Implement this transformer for the programmatic creation of
+ * {@link com.hivemq.extension.sdk.api.services.publish.Publish
  * Publishes} from {@link com.hivemq.extensions.kafka.api.model.KafkaRecord KafkaRecords}. One instance of the
  * implementing class is created per reference in the kafka-configuration.xml. The methods of this interface may be
  * called concurrently and must be thread-safe.
@@ -47,7 +48,8 @@ public interface KafkaToMqttTransformer extends Transformer<KafkaToMqttInitInput
      * method is called by multiple threads concurrently. Extensions are responsible for their own exception handling
      * and this method must not throw any {@link Exception}.
      *
-     * @param input  the {@link KafkaToMqttInput} contains the triggering {@link com.hivemq.extensions.kafka.api.model.KafkaRecord
+     * @param input  the {@link KafkaToMqttInput} contains the triggering
+     *               {@link com.hivemq.extensions.kafka.api.model.KafkaRecord
      *               KafkaRecord} and the {@link com.hivemq.extensions.kafka.api.model.KafkaCluster KafkaCluster}
      *               information.
      * @param output the {@link KafkaToMqttOutput} allows to {@link KafkaToMqttOutput#setPublishes(java.util.List)
