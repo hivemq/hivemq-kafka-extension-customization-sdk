@@ -28,4 +28,5 @@ import com.hivemq.extensions.kafka.api.transformers.TransformerInitInput;
  */
 @Immutable
 @DoNotImplement
-public interface KafkaToMqttInitInput extends TransformerInitInput {}
+public interface KafkaToMqttInitInput extends TransformerInitInput {
+}
