@@ -41,8 +41,8 @@ public interface KafkaTopicService {
      * <p>
      * This method can block the calling transformer.
      *
-     * @param topic the name of a Kafka topic.
-     * @return the {@link KafkaTopicState} of the topic. Possible values here are {@link KafkaTopicState#FAILURE},
+     * @param topic The name of a Kafka topic.
+     * @return The {@link KafkaTopicState} of the topic. Possible values here are {@link KafkaTopicState#FAILURE},
      *         {@link KafkaTopicState#EXISTS} and {@link KafkaTopicState#MISSING}.
      * @since 4.4.0
      */
@@ -55,8 +55,8 @@ public interface KafkaTopicService {
      * <p>
      * This method can block the calling transformer.
      *
-     * @param topics a set containing the names of Kafka topics.
-     * @return a mapping of the queried Kafka topics to their {@link KafkaTopicState}. Possible values here are {@link
+     * @param topics A set containing the names of Kafka topics.
+     * @return A mapping of the queried Kafka topics to their {@link KafkaTopicState}. Possible values here are {@link
      *         KafkaTopicState#FAILURE}, {@link KafkaTopicState#EXISTS} and {@link KafkaTopicState#MISSING}.
      * @throws NullPointerException if {@code topics} is or contains null.
      * @since 4.4.0
@@ -70,8 +70,8 @@ public interface KafkaTopicService {
      * This method can block the calling transformer.
      * <p>
      *
-     * @param topic the name of a new Kafka topic.
-     * @return the {@link KafkaTopicState} of the topic after this methods completes. Possible values here are {@link
+     * @param topic The name of a new Kafka topic.
+     * @return The {@link KafkaTopicState} of the topic after this methods completes. Possible values here are {@link
      *         KafkaTopicState#FAILURE}, {@link KafkaTopicState#EXISTS} and {@link KafkaTopicState#CREATED}.
      * @since 4.4.0
      */
@@ -85,11 +85,11 @@ public interface KafkaTopicService {
      * <p>
      * This method can block the calling transformer.
      *
-     * @param topics a set containing the names of new Kafka topics.
-     * @return a mapping of the Kafka topics to their {@link KafkaTopicState} after this method completes. Possible
+     * @param topics A set containing the names of new Kafka topics.
+     * @return A mapping of the Kafka topics to their {@link KafkaTopicState} after this method completes. Possible
      *         values here are {@link KafkaTopicState#FAILURE}, {@link KafkaTopicState#EXISTS} and {@link
      *         KafkaTopicState#CREATED}.
-     * @throws NullPointerException if {@code topics} is or contains null.
+     * @throws NullPointerException If {@code topics} is or contains null.
      * @since 4.4.0
      */
     @Immutable @NotNull Map<String, @NotNull KafkaTopicState> createKafkaTopics(@NotNull Set<@NotNull String> topics);
@@ -108,7 +108,7 @@ public interface KafkaTopicService {
          * <ul>
          *   <li> Network degradation between HiveMQ and the Kafka cluster
          *   <li> Insufficient permissions to perform the operation
-         *   <li> An unsuitable configuration in either the HiveMQ Enterprise Extension for Kafka or the Kafka cluster
+         *   <li> An unsuitable configuration in either the "HiveMQ Enterprise Extension for Kafka" or the Kafka cluster
          *   <li> The internal state of the Kafka cluster
          * </ul>
          *

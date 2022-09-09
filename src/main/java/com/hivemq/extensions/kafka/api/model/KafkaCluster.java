@@ -33,13 +33,13 @@ import com.hivemq.extension.sdk.api.annotations.NotNull;
 public interface KafkaCluster {
 
     /**
-     * @return the configured {@code <id>} of the cluster.
+     * @return The configured {@code <id>} of the cluster.
      * @since 4.4.0
      */
     @NotNull String getId();
 
     /**
-     * @return the configured {@code <bootstrap-servers>} of the cluster.
+     * @return The configured {@code <bootstrap-servers>} of the cluster.
      * @since 4.4.0
      */
     @NotNull String getBootstrapServers();
