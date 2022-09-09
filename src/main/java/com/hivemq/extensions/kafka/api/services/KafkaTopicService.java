@@ -108,7 +108,7 @@ public interface KafkaTopicService {
          * <ul>
          *   <li> Network degradation between HiveMQ and the Kafka cluster
          *   <li> Insufficient permissions to perform the operation
-         *   <li> An unsuitable configuration in either the HiveMQ Enterprise Extension for Kafka or the Kafka cluster
+         *   <li> An unsuitable configuration in either the "HiveMQ Enterprise Extension for Kafka" or the Kafka cluster
          *   <li> The internal state of the Kafka cluster
          * </ul>
          *

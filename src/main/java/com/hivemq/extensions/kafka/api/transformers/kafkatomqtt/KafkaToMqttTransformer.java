@@ -28,9 +28,9 @@ import com.hivemq.extensions.kafka.api.transformers.Transformer;
  * called concurrently and must be thread-safe.
  * <p>
  * Your implementation of the KafkaToMqttTransformer must be placed in a Java archive (.jar) together with all its
- * dependencies in the {@code customizations} folder of the HiveMQ Enterprise Extension for Kafka. In addition a {@code
- * <kafka-to-mqtt-transformer>} referencing the implementing class via its canonical name must be configured in the
- * {@code kafka-extension.xml} file.
+ * dependencies in the {@code customizations} folder of the "HiveMQ Enterprise Extension for Kafka". In addition, a
+ * {@code <kafka-to-mqtt-transformer>} referencing the implementing class via its canonical name must be configured in
+ * the {@code kafka-extension.xml} file.
  *
  * @author Christoph Schäbel
  * @author Georg Held
@@ -41,19 +41,21 @@ import com.hivemq.extensions.kafka.api.transformers.Transformer;
 public interface KafkaToMqttTransformer extends Transformer<KafkaToMqttInitInput> {
 
     /**
-     * This callback is executed for every {@link com.hivemq.extensions.kafka.api.model.KafkaRecord KafkaRecord} that is
-     * polled by the HiveMQ Enterprise Extension for Kafka and matches the {@code <mqtt-to-kafka-transformer>} tag
-     * configured in the {@code <mqtt-topic-filters>}. It allows the publication of any number of {@link
+     * This callback is executed for every {@link com.hivemq.extensions.kafka.api.model.KafkaRecord KafkaRecord} that
+     * the "HiveMQ Enterprise Extension for Kafka" polls from Kafka according to the configured {@code <kafka-topics>}
+     * in the {@code <kafka-to-mqtt-transformer>} tag.
+     * <p>
+     * It allows the publication of any number of {@link
      * com.hivemq.extension.sdk.api.services.publish.Publish Publishes} via the {@link KafkaToMqttOutput} object. This
      * method is called by multiple threads concurrently. Extensions are responsible for their own exception handling
      * and this method must not throw any {@link Exception}.
      *
-     * @param input  the {@link KafkaToMqttInput} contains the triggering
+     * @param input  The {@link KafkaToMqttInput} contains the triggering
      *               {@link com.hivemq.extensions.kafka.api.model.KafkaRecord
      *               KafkaRecord} and the {@link com.hivemq.extensions.kafka.api.model.KafkaCluster KafkaCluster}
      *               information.
-     * @param output the {@link KafkaToMqttOutput} allows to {@link KafkaToMqttOutput#setPublishes(java.util.List)
-     *               provide a list of Publishes}. If no output is set, a empty List is used as default and the kafka
+     * @param output The {@link KafkaToMqttOutput} allows to {@link KafkaToMqttOutput#setPublishes(java.util.List)
+     *               provide a list of Publishes}. If no output is set, an empty List is used as default and the kafka
      *               record will not be processed again, but ignored.
      * @since 4.5.0
      */
