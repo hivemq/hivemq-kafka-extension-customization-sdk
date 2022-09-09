@@ -21,7 +21,7 @@ import com.hivemq.extension.sdk.api.annotations.Immutable;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
 
 /**
- * This is the base interface for all HiveMQ Enterprise Extension for Kafka transformer.
+ * This is the base interface for all "HiveMQ Enterprise Extension for Kafka" transformer.
  *
  * @author Christoph Schäbel
  * @author Georg Held
@@ -34,7 +34,7 @@ public interface Transformer<I extends TransformerInitInput> {
     /**
      * Use the init method to set up static runtime context for the execution of your transformer.
      *
-     * @param input see the specific input e.g.
+     * @param input See the specific input e.g.
      *              {@link com.hivemq.extensions.kafka.api.transformers.mqtttokafka.MqttToKafkaInitInput
      *              MqttToKafkaInitInput}.
      * @since 4.4.0

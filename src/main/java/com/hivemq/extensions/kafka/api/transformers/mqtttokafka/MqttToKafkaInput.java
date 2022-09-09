@@ -26,7 +26,8 @@ import com.hivemq.extensions.kafka.api.services.KafkaTopicService;
  * The input parameter of the {@link MqttToKafkaTransformer}. It contains the information of the to be transformed
  * {@link PublishPacket}.
  * <p>
- * The MqttToKafkaInput allows access to the {@link KafkaCluster} and the {@link KafkaTopicService} for this cluster.
+ * Additionally, the MqttToKafkaInput allows access to the {@link KafkaCluster} and the {@link KafkaTopicService} for
+ * this cluster.
  *
  * @author Christoph Schäbel
  * @author Georg Held
@@ -37,19 +38,19 @@ import com.hivemq.extensions.kafka.api.services.KafkaTopicService;
 public interface MqttToKafkaInput {
 
     /**
-     * @return the {@link PublishPacket} that triggered this transformer call.
+     * @return The {@link PublishPacket} that triggered this transformer call.
      * @since 4.4.0
      */
     @NotNull PublishPacket getPublishPacket();
 
     /**
-     * @return the {@link KafkaTopicService} to interact with topics on the Kafka cluster.
+     * @return The {@link KafkaTopicService} to interact with topics on the Kafka cluster.
      * @since 4.4.0
      */
     @NotNull KafkaTopicService getKafkaTopicService();
 
     /**
-     * @return the {@link KafkaCluster} this transformer is associated with.
+     * @return The {@link KafkaCluster} this transformer is associated with.
      * @since 4.4.0
      */
     @NotNull KafkaCluster getKafkaCluster();
