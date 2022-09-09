@@ -44,9 +44,9 @@ public interface KafkaRecordBuilder {
      * <p>
      * This is required to successfully build a {@link KafkaRecord}.
      *
-     * @param topic the name of the topic.
-     * @return this builder
-     * @throws IllegalArgumentException if topic is not a valid name for a Kafka topic
+     * @param topic The name of the topic.
+     * @return This builder.
+     * @throws IllegalArgumentException If the topic is not a valid name for a Kafka topic.
      * @since 4.4.0
      */
     @NotNull KafkaRecordBuilder topic(@NotNull String topic);
@@ -55,7 +55,7 @@ public interface KafkaRecordBuilder {
      * Set the key of the Kafka record.
      *
      * @param key the value of the key.
-     * @return this builder
+     * @return This builder.
      * @since 4.4.0
      */
     @NotNull KafkaRecordBuilder key(@NotNull ByteBuffer key);
@@ -63,8 +63,8 @@ public interface KafkaRecordBuilder {
     /**
      * Set the key of the Kafka record.
      *
-     * @param key the value of the key.
-     * @return this builder
+     * @param key The value of the key.
+     * @return This builder.
      * @since 4.4.0
      */
     @NotNull KafkaRecordBuilder key(byte @NotNull [] key);
@@ -72,8 +72,8 @@ public interface KafkaRecordBuilder {
     /**
      * Set the key of the Kafka record.
      *
-     * @param key the value of the key. {@link java.nio.charset.StandardCharsets#UTF_8} is used for encoding.
-     * @return this builder
+     * @param key The value of the key. {@link java.nio.charset.StandardCharsets#UTF_8} is used for encoding.
+     * @return This builder.
      * @since 4.4.0
      */
     @NotNull KafkaRecordBuilder key(@NotNull String key);
@@ -81,9 +81,9 @@ public interface KafkaRecordBuilder {
     /**
      * Set the key of the Kafka record.
      *
-     * @param key     the value of the key.
-     * @param charset the {@link Charset} used for encoding.
-     * @return this builder
+     * @param key     The value of the key.
+     * @param charset The {@link Charset} used for encoding.
+     * @return This builder.
      * @since 4.4.0
      */
     @NotNull KafkaRecordBuilder key(@NotNull String key, @NotNull Charset charset);
@@ -91,8 +91,8 @@ public interface KafkaRecordBuilder {
     /**
      * Set the value of the Kafka record.
      *
-     * @param value the value of the Kafka value.
-     * @return this builder
+     * @param value The value of the Kafka value.
+     * @return This builder.
      * @since 4.4.0
      */
     @NotNull KafkaRecordBuilder value(@NotNull ByteBuffer value);
@@ -100,8 +100,8 @@ public interface KafkaRecordBuilder {
     /**
      * Set the value of the Kafka record.
      *
-     * @param value the value of the Kafka value.
-     * @return this builder
+     * @param value The value of the Kafka value.
+     * @return This builder.
      * @since 4.4.0
      */
     @NotNull KafkaRecordBuilder value(byte @NotNull [] value);
@@ -109,8 +109,8 @@ public interface KafkaRecordBuilder {
     /**
      * Set the value of the Kafka record.
      *
-     * @param value the value of the Kafka value. {@link java.nio.charset.StandardCharsets#UTF_8} is used for encoding.
-     * @return this builder
+     * @param value The value of the Kafka value. {@link java.nio.charset.StandardCharsets#UTF_8} is used for encoding.
+     * @return This builder.
      * @since 4.4.0
      */
     @NotNull KafkaRecordBuilder value(@NotNull String value);
@@ -118,9 +118,9 @@ public interface KafkaRecordBuilder {
     /**
      * Set the value of the Kafka record.
      *
-     * @param value   the value of the Kafka value.
-     * @param charset the {@link Charset} used for encoding.
-     * @return this builder
+     * @param value   The value of the Kafka value.
+     * @param charset The {@link Charset} used for encoding.
+     * @return This builder.
      * @since 4.4.0
      */
     @NotNull KafkaRecordBuilder value(@NotNull String value, @NotNull Charset charset);
@@ -128,9 +128,9 @@ public interface KafkaRecordBuilder {
     /**
      * Add a header to the Kafka record.
      *
-     * @param key   the key of the header.
-     * @param value the value of the header.
-     * @return this builder
+     * @param key   The key of the header.
+     * @param value The value of the header.
+     * @return This builder.
      * @since 4.4.0
      */
     @NotNull KafkaRecordBuilder header(@NotNull String key, @NotNull ByteBuffer value);
@@ -138,9 +138,9 @@ public interface KafkaRecordBuilder {
     /**
      * Add a header to the Kafka record.
      *
-     * @param key   the key of the header.
-     * @param value the value of the header.
-     * @return this builder
+     * @param key   The key of the header.
+     * @param value The value of the header.
+     * @return This builder.
      * @since 4.4.0
      */
     @NotNull KafkaRecordBuilder header(@NotNull String key, byte @NotNull [] value);
@@ -148,9 +148,9 @@ public interface KafkaRecordBuilder {
     /**
      * Add a header to the Kafka record.
      *
-     * @param key   the key of the header.
-     * @param value the value of the header. {@link java.nio.charset.StandardCharsets#UTF_8} is used for encoding.
-     * @return this builder
+     * @param key   The key of the header.
+     * @param value The value of the header. {@link java.nio.charset.StandardCharsets#UTF_8} is used for encoding.
+     * @return This builder.
      * @since 4.4.0
      */
     @NotNull KafkaRecordBuilder header(@NotNull String key, @NotNull String value);
@@ -158,10 +158,10 @@ public interface KafkaRecordBuilder {
     /**
      * Add a header to the Kafka record.
      *
-     * @param key     the key of the header.
-     * @param value   the value of the header.
-     * @param charset the {@link Charset} used for encoding the {@code value}.
-     * @return this builder
+     * @param key     The key of the header.
+     * @param value   The value of the header.
+     * @param charset The {@link Charset} used for encoding the {@code value}.
+     * @return This builder.
      * @since 4.4.0
      */
     @NotNull KafkaRecordBuilder header(@NotNull String key, @NotNull String value, @NotNull Charset charset);
@@ -169,8 +169,8 @@ public interface KafkaRecordBuilder {
     /**
      * Set the timestamp of the Kafka record.
      *
-     * @param timestamp the value of the Kafka timestamp, in milliseconds since UNIX epoch.
-     * @return this builder
+     * @param timestamp The value of the Kafka timestamp, in milliseconds since UNIX epoch.
+     * @return This builder.
      * @since 4.4.0
      */
     @NotNull KafkaRecordBuilder timestamp(long timestamp);
@@ -178,8 +178,8 @@ public interface KafkaRecordBuilder {
     /**
      * Set the partition number of the Kafka record.
      *
-     * @param partition the value of the Kafka partition number.
-     * @return this builder
+     * @param partition The value of the Kafka partition number.
+     * @return This builder.
      * @since 4.4.0
      */
     @NotNull KafkaRecordBuilder partition(int partition);
@@ -187,8 +187,8 @@ public interface KafkaRecordBuilder {
     /**
      * Create a new {@link KafkaRecord} from the current state of this builder. The builder can be reused afterwards.
      *
-     * @return a new {@link KafkaRecord} containing a snapshot of the current state of this builder.
-     * @throws NullPointerException if the topic was not set.
+     * @return A new {@link KafkaRecord} containing a snapshot of the current state of this builder.
+     * @throws NullPointerException If the topic was not set.
      * @since 4.4.0
      */
     @NotNull KafkaRecord build();
