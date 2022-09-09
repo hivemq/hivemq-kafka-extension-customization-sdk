@@ -46,7 +46,7 @@ public interface KafkaRecordBuilder {
      *
      * @param topic The name of the topic.
      * @return This builder.
-     * @throws IllegalArgumentException If topic is not a valid name for a Kafka topic.
+     * @throws IllegalArgumentException If the topic is not a valid name for a Kafka topic.
      * @since 4.4.0
      */
     @NotNull KafkaRecordBuilder topic(@NotNull String topic);
