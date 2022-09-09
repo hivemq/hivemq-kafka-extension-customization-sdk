@@ -38,33 +38,33 @@ import java.nio.charset.Charset;
 public interface KafkaHeader {
 
     /**
-     * @return the key of this header.
+     * @return The key of this header.
      * @since 4.4.0
      */
     @NotNull String getKey();
 
     /**
-     * @return the value of this header.
+     * @return The value of this header.
      * @since 4.4.0
      */
     @NotNull ByteBuffer getValue();
 
     /**
-     * @return the value of this header.
+     * @return The value of this header.
      * @since 4.4.0
      */
     byte @NotNull [] getValueAsByteArray();
 
     /**
-     * @return the value of this header as a string. {@link java.nio.charset.StandardCharsets#UTF_8 UTF_8} is used for
+     * @return The value of this header as a string. {@link java.nio.charset.StandardCharsets#UTF_8 UTF_8} is used for
      *         the decoding.
      * @since 4.4.0
      */
     @NotNull String getValueAsString();
 
     /**
-     * @param charset the {@link Charset} that is used for the decoding.
-     * @return the value of this header as a string.
+     * @param charset The {@link Charset} that is used for the decoding.
+     * @return The value of this header as a string.
      * @since 4.4.0
      */
     @NotNull String getValueAsString(@NotNull Charset charset);
