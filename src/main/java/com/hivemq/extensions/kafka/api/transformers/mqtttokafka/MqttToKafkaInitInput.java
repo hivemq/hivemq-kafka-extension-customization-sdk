@@ -23,7 +23,7 @@ import com.hivemq.extensions.kafka.api.services.KafkaTopicService;
 import com.hivemq.extensions.kafka.api.transformers.TransformerInitInput;
 
 /**
- * Provides context for the set up of a {@link MqttToKafkaTransformer}.
+ * Provides context for the set-up of a {@link MqttToKafkaTransformer}.
  *
  * @author Georg Held
  * @since 4.4.0
@@ -33,13 +33,13 @@ import com.hivemq.extensions.kafka.api.transformers.TransformerInitInput;
 public interface MqttToKafkaInitInput extends TransformerInitInput {
 
     /**
-     * @return the {@link KafkaCluster} this transformer is associated with.
+     * @return The {@link KafkaCluster} this transformer is associated with.
      * @since 4.4.0
      */
     @NotNull KafkaCluster getKafkaCluster();
 
     /**
-     * @return the {@link KafkaTopicService} to interact with topics on the Kafka cluster.
+     * @return The {@link KafkaTopicService} to interact with topics on the Kafka cluster.
      * @since 4.4.0
      */
     @NotNull KafkaTopicService getKafkaTopicService();

@@ -41,15 +41,15 @@ public interface MqttToKafkaOutput {
      * Create a new {@link KafkaRecordBuilder}. One {@link KafkaRecordBuilder} can be used to build multiple Kafka
      * records.
      *
-     * @return an empty instance of the {@link KafkaRecordBuilder}.
+     * @return An empty instance of the {@link KafkaRecordBuilder}.
      * @since 4.4.0
      */
     @NotNull KafkaRecordBuilder newKafkaRecordBuilder();
 
     /**
      * Sets the {@link KafkaRecord}s, that will be pushed to the associated Kafka cluster after the {@link
-     * MqttToKafkaTransformer#transformMqttToKafka(MqttToKafkaInput, MqttToKafkaOutput)} call returns. The HiveMQ
-     * Enterprise Extension for Kafka will publish these records in the order provided by the {@code kafkaRecords}
+     * MqttToKafkaTransformer#transformMqttToKafka(MqttToKafkaInput, MqttToKafkaOutput)} call returns. The "HiveMQ
+     * Enterprise Extension for Kafka" will publish these records in the order provided by the {@code kafkaRecords}
      * argument.
      * <p>
      * If desired, the same record can occupy multiple places in the {@code kafkaRecords} list. When no record shall be
@@ -60,9 +60,9 @@ public interface MqttToKafkaOutput {
      * <p>
      * Each additional call of this method will overwrite the previous one.
      *
-     * @param kafkaRecords a list of to be published {@link KafkaRecord}s.
-     * @throws NullPointerException     if {@code kafkaRecords} or any element of it is null.
-     * @throws IllegalArgumentException if any element in {@code kafkaRecords} was not created via a {@link
+     * @param kafkaRecords A list of to be published {@link KafkaRecord}s.
+     * @throws NullPointerException     If {@code kafkaRecords} or any element of it is null.
+     * @throws IllegalArgumentException If any element in {@code kafkaRecords} was not created via a {@link
      *                                  KafkaRecordBuilder}.
      * @since 4.4.0
      */

@@ -27,9 +27,9 @@ import java.util.List;
  * from {@link com.hivemq.extension.sdk.api.packets.publish.PublishPacket}s.
  * <p>
  * Your implementation of the MqttToKafkaTransformer must be placed in a java archive (.jar) together with all its
- * dependencies in the {@code customizations} folder of the HiveMQ Enterprise Extension for Kafka. In addition a {@code
- * <mqtt-to-kafka-transformer>} referencing the implementing class via its canonical name must be configured in the
- * {@code kafka-extension.xml} file.
+ * dependencies in the {@code customizations} folder of the "HiveMQ Enterprise Extension for Kafka". In addition, a
+ * {@code <mqtt-to-kafka-transformer>} referencing the implementing class via its canonical name must be configured in
+ * the {@code kafka-extension.xml} file.
  *
  * @author Christoph Schäbel
  * @author Georg Held
@@ -43,11 +43,11 @@ public interface MqttToKafkaTransformer extends Transformer<MqttToKafkaInitInput
      * <mqtt-to-kafka-transformer>} tag configured {@code <mqtt-topic-filters>}. It allows the publication of any number
      * of {@link com.hivemq.extensions.kafka.api.model.KafkaRecord}s via the {@link MqttToKafkaOutput} object.
      *
-     * @param input  the {@link MqttToKafkaInput} contains the triggering
+     * @param input  The {@link MqttToKafkaInput} contains the triggering
      *               {@link com.hivemq.extension.sdk.api.packets.publish.PublishPacket}
      *               and the {@link com.hivemq.extensions.kafka.api.model.KafkaCluster} information. The {@link
      *               com.hivemq.extensions.kafka.api.services.KafkaTopicService} can be accessed.
-     * @param output pass the list of new {@link com.hivemq.extensions.kafka.api.model.KafkaRecord}s to the {@link
+     * @param output Pass the list of new {@link com.hivemq.extensions.kafka.api.model.KafkaRecord}s to the {@link
      *               MqttToKafkaOutput#setKafkaRecords(List)} method.
      * @since 4.4.0
      */
