@@ -23,7 +23,7 @@ import com.hivemq.extensions.kafka.api.services.KafkaTopicService;
 import com.hivemq.extensions.kafka.api.transformers.TransformerInitInput;
 
 /**
- * Provides context for the set-up of a {@link MqttToKafkaTransformer}.
+ * Provides context for the setup of a {@link MqttToKafkaTransformer}.
  *
  * @author Georg Held
  * @since 4.4.0
