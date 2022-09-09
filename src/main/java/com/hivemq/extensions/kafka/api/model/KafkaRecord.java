@@ -38,55 +38,55 @@ import java.util.Optional;
 public interface KafkaRecord {
 
     /**
-     * @return the topic of this record.
+     * @return The topic of this record.
      * @since 4.4.0
      */
     @NotNull String getTopic();
 
     /**
-     * @return the {@link KafkaHeaders} of this record. These might be empty.
+     * @return The {@link KafkaHeaders} of this record. These might be empty.
      * @since 4.4.0
      */
     @NotNull KafkaHeaders getHeaders();
 
     /**
-     * @return an {@link Optional} of the key of this record.
+     * @return An {@link Optional} of the key of this record.
      * @since 4.4.0
      */
     @NotNull Optional<ByteBuffer> getKey();
 
     /**
-     * @return an {@link Optional} of the key of this record.
+     * @return An {@link Optional} of the key of this record.
      * @since 4.4.0
      */
     @NotNull Optional<byte[]> getKeyAsByteArray();
 
     /**
-     * @return an {@link Optional} of the value of this record.
+     * @return An {@link Optional} of the value of this record.
      * @since 4.4.0
      */
     @NotNull Optional<ByteBuffer> getValue();
 
     /**
-     * @return an {@link Optional} of the value of this record.@return
+     * @return An {@link Optional} of the value of this record.
      * @since 4.4.0
      */
     @NotNull Optional<byte[]> getValueAsByteArray();
 
     /**
-     * @return an {@link Optional} of the timestamp of this record, in milliseconds since UNIX epoch.
+     * @return An {@link Optional} of the timestamp of this record, in milliseconds since UNIX epoch.
      * @since 4.4.0
      */
     @NotNull Optional<Long> getTimestamp();
 
     /**
-     * @return an {@link Optional} of the partition number of this record.
+     * @return An {@link Optional} of the partition number of this record.
      * @since 4.4.0
      */
     @NotNull Optional<Integer> getPartition();
 
     /**
-     * @return an {@link Optional} of the offset value of this record.
+     * @return An {@link Optional} of the offset value of this record.
      * @since 4.4.0
      */
     @NotNull Optional<Long> getOffset();
