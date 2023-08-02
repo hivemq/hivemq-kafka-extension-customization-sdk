@@ -56,8 +56,6 @@ metadata {
         }
     }
     github {
-        org.set("hivemq")
-        repo.set("hivemq-kafka-extension-customization-sdk")
         issues()
     }
 }
